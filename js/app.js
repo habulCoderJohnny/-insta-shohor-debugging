@@ -57,6 +57,7 @@ const createPost = (post) => {
   const userImage = post.userImage;
   const div = document.createElement("article");
   div.classList.add("post");
+  //CommenterName&Comment error solved line No-125,129
   div.innerHTML = `
               <div class="post__header">
                 <div class="post__profile">
@@ -118,7 +119,6 @@ const createPost = (post) => {
                   </div>
 
                   <hr/>
-
                   <div class="post__description">
                     <small>
                       <a class="post__name--underline" href="#">
@@ -145,7 +145,7 @@ const showPosts = (posts) => {
 };
 
 const displayLikedPosts = () => {
-  // display liked post solved
+  // display likedPost solved
   document.getElementById("liked").innerHTML = "";
   const likedPosts = getLikedPosts();
   likedPosts.forEach((post) => {
@@ -155,6 +155,8 @@ const displayLikedPosts = () => {
 };
 
 const displayReportedPosts = () => {
+  // display reported post solved
+  document.getElementById("reported").innerHTML = "";
   const reportedPosts = getReportedPosts();
   posts.forEach((post) => {
     const div = createPost(post);
